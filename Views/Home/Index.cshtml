@@ -1,0 +1,40 @@
+﻿@model lr10.Models.Registration
+
+<h2>Register for Consultation</h2>
+
+<form asp-action="RegisterConsultation" method="post">
+    <div asp-validation-summary="All"></div>
+
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ConsultationDate"></label>
+        <input asp-for="ConsultationDate" type="datetime-local" class="form-control" />
+        <span asp-validation-for="ConsultationDate"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SelectedProduct"></label>
+        <select asp-for="SelectedProduct" class="form-control">
+            <option value="">Select a product</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="C#">C#</option>
+            <option value="Java">Java</option>
+            <option value="Python">Python</option>
+            <option value="Basics">Basics</option>
+        </select>
+        <span asp-validation-for="SelectedProduct"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
